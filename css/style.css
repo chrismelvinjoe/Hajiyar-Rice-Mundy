@@ -1,0 +1,151 @@
+/* Main Stylesheet - Imports all other CSS files */
+
+/* Base Styles & Variables */
+@import url('base.css');
+
+/* Header & Navigation */
+@import url('header.css');
+
+/* Hero Section */
+@import url('hero.css');
+
+/* Products Section */
+@import url('products.css');
+
+/* About Section */
+@import url('about.css');
+
+/* Contact Section */
+@import url('contact.css');
+
+/* Footer */
+@import url('footer.css');
+
+/* Animations */
+@import url('animations.css');
+
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    overflow-x: hidden;
+    background-color: var(--light-bg);
+}
+
+/* Utility Classes */
+.text-center {
+    text-align: center;
+}
+
+.section-padding {
+    padding: 5rem 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Responsive Images */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: var(--transition);
+    font-weight: 500;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.btn-outline:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Section Headings */
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title h2::after {
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 3px;
+    background-color: var(--accent-color);
+    bottom: -10px;
+    left: 20%;
+}
+
+.section-title p {
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+
+/* Responsive Utilities */
+@media (max-width: 768px) {
+    .section-padding {
+        padding: 3rem 0;
+    }
+    
+    .section-title h2 {
+        font-size: 2rem;
+    }
+    
+    .btn {
+        padding: 10px 25px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-padding {
+        padding: 2.5rem 0;
+    }
+    
+    .section-title h2 {
+        font-size: 1.8rem;
+    }
+    
+    .btn {
+        padding: 8px 20px;
+        font-size: 0.85rem;
+    }
+}

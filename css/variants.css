@@ -1,0 +1,227 @@
+/* Rice Variants Section */
+#variants {
+    background-color: #f5f9f5;
+    padding: 4rem 0;
+    position: relative;
+}
+
+#variants .section-title {
+    color: var(--primary-color);
+    margin-bottom: 2.5rem;
+    text-align: center;
+}
+
+#variants .section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: var(--accent-color);
+    margin: 1rem auto 0;
+}
+
+
+.variants-container {
+    position: relative;
+    max-width: 100%;
+    overflow-x: auto;
+    padding: 1rem 0 2rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-color) rgba(255, 255, 255, 0.1);
+}
+
+.variants-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.variants-container::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.1);
+    border-radius: 4px;
+}
+
+.variants-container::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 4px;
+}
+
+.variants-scroll {
+    display: inline-flex;
+    gap: 2rem;
+    padding: 0 2rem;
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.variants .product-card {
+    flex: 0 0 280px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgb(145, 145, 145);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    min-height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: white;
+    padding: 1.5rem;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.variants .product-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, 
+        rgba(0,0,0,0.2) 70%,
+        rgba(0,0,0,0.7) 100%);
+    z-index: 1;
+}
+
+.variants .product-card > * {
+    position: relative; 
+    z-index: 2;
+}
+
+.variants .product-card h3 {
+    font-size: 1.5rem;
+    margin: 0 0 0.5rem 0;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.variants .product-card p {
+    margin: 0;
+    color: rgba(255,255,255,0.9);
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.variants .product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Hide the product-image div since we're using it as a background */
+.variants .product-image {
+    display: none;
+}
+
+.variants .product-info {
+    padding: 1.5rem;
+}
+
+.variants .product-info h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: var(--dark-color);
+}
+
+.variants .product-info p {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Scroll indicators */
+#variants {
+    position: relative;
+}
+
+.scroll-indicator {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    opacity: 0;
+    transition: all 0.3s ease;
+    border: none;
+    outline: none;
+    visibility: hidden;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+#variants.visible .scroll-indicator {
+    opacity: 0.9;
+    visibility: visible;
+}
+
+.scroll-indicator:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-50%) scale(1.1);
+    opacity: 1;
+    border-color: transparent;
+}
+
+.scroll-indicator i {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.scroll-indicator:hover i {
+    color: white;
+}
+
+.scroll-left {
+    left: 20px;
+}
+
+.scroll-right {
+    right: 20px;
+}
+
+/* Hide scroll indicators when scrolled to edges */
+#variants.scroll-start .scroll-left,
+#variants.scroll-end .scroll-right {
+    opacity: 0.3 !important;
+    pointer-events: none;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .variants .product-card {
+        flex: 0 0 260px;
+    }
+}
+
+@media (max-width: 768px) {
+    .variants .product-card {
+        flex: 0 0 240px;
+    }
+    
+    .variants .product-info {
+        padding: 1.2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .variants .product-card {
+        flex: 0 0 220px;
+    }
+    
+    .scroll-indicator {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .scroll-indicator i {
+        font-size: 1.1rem;
+    }
+}

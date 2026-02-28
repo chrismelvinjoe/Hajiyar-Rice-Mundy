@@ -1,0 +1,204 @@
+/* Weight Variants Section */
+.weight-variants {
+    padding: 10rem 0 6rem;
+    background-color: #f9f9f9;
+}
+
+.weight-variants .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.weight-variants h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 4rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.weight-variants h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background-color: var(--primary-color);
+}
+
+.weight-category {
+    margin-bottom: 4rem;
+    padding: 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.weight-title {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.variants-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 1rem 0;
+}
+
+.product-card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    min-height: 350px;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: white;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
+    padding: 1.5rem;
+}
+
+.product-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0.7) 100%
+    );
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.product-card > * {
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.product-card h3 {
+    font-size: 1.5rem;
+    margin: 0 0 0.5rem 0;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.product-card p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.product-price {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: white;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.9) 100%);
+    padding: 10px 0;
+    transform: translateY(100%);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.product-card:hover .product-price {
+    transform: translateY(20px);
+    opacity: 1;
+}
+
+.product-card:hover h3,
+.product-card:hover p {
+    transform: translateY(-30px);
+    background-color: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(0);
+}
+
+.product-card:hover::before {
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0) 100%
+    );
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .variants-container {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .weight-variants {
+        padding: 10rem 0 4rem;
+    }
+    
+    .weight-variants h2 {
+        font-size: 2rem;
+        margin-bottom: 3rem;
+    }
+    
+    .weight-category {
+        padding: 1.5rem;
+    }
+    
+    .weight-title {
+        font-size: 1.5rem;
+    }
+    
+    .product-card {
+        min-height: 300px;
+    }
+}
+
+@media (max-width: 576px) {
+    .variants-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .weight-variants h2 {
+        font-size: 1.8rem;
+    }
+    
+    .product-card h3 {
+        font-size: 1.3rem;
+    }
+    
+    .product-card p {
+        font-size: 0.9rem;
+    }
+}
