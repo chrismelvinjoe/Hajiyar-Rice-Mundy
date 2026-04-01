@@ -1,7 +1,7 @@
 /* Hero Section */
 .hero {
     height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url('../images/rice.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url('../images/Rice.jpg') no-repeat center center/cover;
     display: flex;
     align-items: center;
     text-align: center;
